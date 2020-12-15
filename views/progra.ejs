@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayudas</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@235&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body class="body-progr">
+    <nav class="menu" id="menu">
+      <div class="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <ul class="menu-links">
+        <li><a class="one" href="index.html">Inicio</a></li>
+        <li>
+          <a class="two" href="index.html#me">Quién soy</a>
+        </li>
+        <li><a class="three" href="#comings">Proyectos</a></li>
+        <li><a class="four" href="#contact">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="sidebar">
+        <a class="inicio-btn" href="index.html"><h1>Vuelve atras</h1></a>
+        <h1 href="#initial-visual-studio">Prepara tu Visual Studio</h1>
+        <h1 href="#webpack" style="margin-left: 15px;">Webpack</h1>
+        <h1 href="#scroll-out">Scroll-Out</h1>
+        <h1 href="#flex">Display Flex</h1>
+      </div>
+      <div class="cuerpo">
+        <h1 id="initial-visual-studio">
+          Prepara tu Visual Studio para programar
+        </h1>
+        <p></p>
+        <h2>Precauciones</h2>
+        <p>
+          Para arrancar nuestro proyecto correctamente, debemos tener instalada
+          en nuestra terminal npm. Para ello, puedes ingresar a este enlace que
+          te explicará cómo instalarlo según tu sistema operativo:
+          <a href="https://www.npmjs.com/get-npm"
+            >https://www.npmjs.com/get-npm</a
+          >
+        </p>
+        <p>
+          También deberás tener instalada la opción de Node.js. Para hacerlo,
+          ingresá a este enlace y sigue las intrucciones:
+          <a href="https://nodejs.org/es/download/"
+            >https://nodejs.org/es/download/</a
+          >
+        </p>
+        <h2>Step 1</h2>
+        <p>
+          En esta sección vamos a aprender de manera responsive, cómo dejar tu
+          Visual Studio Code ordenado y preparado para trabajar. Es importante
+          saber que esta es una base para que se arranquen los proyectos,
+          después dependera de ti cómo continuarlo.
+        </p>
+
+        <p>
+          Para arrancar, vamos a abrir nuestro Visual Studio Code y vamos a
+          crear una carpeta <b>app</b> donde guardaremos la mayoría de nuestros
+          proyectos. Haremos clic derecho a esta carpeta, y buscaremos la opción para crear una nueva, New folder. A esta carpeta la llamaremos assets.
+          Dentro de esta carpeta, creamos 3 más. Una que se llamará
+          <b>images</b> donde guardaremos todas las imagenes de nuestro
+          proyecto. Otra que se llame <b>scripts</b>, donde estarán todos
+          nuestros archivos .js (javascript). Y la tercera será <b>styles</b>,
+          allí estarán todos nuestros archivos .css .scss (estilos).
+          <p>Nota: los nombres de las carpetas puedes elegirlos según tus gustos. Únicamente te recomiendo que ingresemos los mismos para siempre estar bien alineados. Quedaría así:</p>
+          
+          <img src="assets/images/Programacion-section/Webpacks/folders.png" />
+        </p>
+        <h2>Step 2</h2>
+        <p>
+          Dentro de la carpeta app, crearemos un archivo index.html (para crear una archivo, simplemente haz clic derecho en la carpeta y New file), dentro de
+          este archivo escribiremos html y nos aparecerá la opcion de html:5 y
+          la seleccionamos. Aquí es donde escribirás tu código HTML. </p>
+          <img src="assets/images/Programacion-section/Webpacks/html.png">
+          <img src="assets/images/Programacion-section/Webpacks/html2.png">
+          <p>Dentro de la carpeta styles, crearemos un archivo que se llame style.css. Este
+          va a ser tu archivo donde van a estar todas las declaraciones de tus
+          archivos css. Finalmente, en la carpeta scripts, vas a crear un
+          archivo que se llamará App.js. Este va a ser el archivo principal
+          javascript de tu proyecto.}
+        </p>
+        <h2>Step3</h2>
+        <p>
+          Una vez realizado todo esto, abriremos la terminal de nuetros
+          proyecto. Para hacerlo, arriba de todo verás una opción que dice
+          Terminal, le darás clic y abrirás New Terminal o bien en Windows
+          puedes teclear ctrl + shift + ñ. Una vez allí, comenzaremos a instalar
+          nuestra carpeta de packages. Para ello, ingresa el siguiente comando:
+          npm init -y.
+        </p>
+
+        <p>
+          Este comando lo que hace es crearte un archivo .json. En este arhivo
+          se guardarán todos los paquetes que instales a futuro en tu proyecto.
+        </p>
+        <p></p>
+
+        <h1 id="webpack">Webpack</h1>
+        <p>
+          If you've been following the guides from the start, you will now have
+          a small project that shows "Hello webpack". Now let's try to
+          incorporate some other assets, like images, to see how they can be
+          handled. Prior to webpack, front-end developers would use tools like
+          grunt and gulp to process these assets and move them from their /src
+          folder into their /dist or /build directory. The same idea was used
+          for JavaScript modules, but tools like webpack will dynamically bundle
+          all dependencies (creating what's known as a dependency graph). This
+          is great because every module now explicitly states its dependencies
+          and we'll avoid bundling modules that aren't in use. One of the
+          coolest webpack features is that you can also include any other type
+          of file, besides JavaScript, for which there is a loader or built-in
+          Asset Modules support. This means that the same benefits listed above
+          for JavaScript (e.g. explicit dependencies) can be applied to
+          everything used in building a website or web app. Let's start with
+          CSS, as you may already be familiar with that setup. Setup Let's make
+          a minor change to our project before we get started: dist/index.html
+        </p>
+
+        <h1 id="scroll-out">Scroll-Out</h1>
+        <p>
+          Lorem ipsum cupiditate, corporis a qui libero ipsum delectus quidem
+          dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+          blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur
+          pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates,
+          deserunt facilis et iste corrupti omnis tenetur est. Iste ut est dicta
+          dolor itaque adipisci, dolorum minima, veritatis earum provident error
+          molestias. Ratione magni illo sint vel velit ut excepturi consectetur
+          suscipit, earum modi accusamus voluptatem nostrum, praesentium
+          numquam, reiciendis voluptas sit id quisquam. Consequatur in quis
+          reprehenderit modi perspiciatis necessitatibus saepe, quidem, suscipit
+          iure natus dignissimos ipsam, eligendi deleniti accusantium, rerum
+          quibusdam fugit perferendis et optio recusandae sed ratione. Culpa,
+          dolorum reprehenderit harum ab voluptas fuga, nisi eligendi natus
+          maiores illum quas quos et aperiam aut doloremque optio maxime fugiat
+          doloribus. Eum dolorum expedita quam, nesciunt Adipisicing elit.
+          Tempore tempora rerum. The end Consectetur adipisicing elit. Tempore
+          tempora rerum, est autem cupiditate, corporis a qui libero ipsum
+          delectus quidem dolor at nulla, adipisci veniam in reiciendis aut
+          asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in
+          aspernatur pariaturlores sunt esse magni, ut, dignissimos. Adipisicing
+          elit. Tempore tempora rerum. Lorem ipsum cupiditate, corporis a qui
+          libero ipsum tempora in delectus quidem dolor at nulla, adipisci
+          veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum
+          nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam tempora in
+          dolores sunt esse magni, ut, dignissimos.
+        </p>
+        <h1 id="flex">Display Flex</h1>
+        <p>
+          Lorem ipsum cupiditate, corporis a qui libero ipsum delectus quidem
+          dolor at nulla, adipisci veniam in reiciendis aut asperiores omnis
+          blanditiis quod quas laborum nam! Fuga ad tempora in aspernatur
+          pariatur fugit quibusdam dolores sunt esse magni, ut, dignissimos.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates,
+          deserunt facilis et iste corrupti omnis tenetur est. Iste ut est dicta
+          dolor itaque adipisci, dolorum minima, veritatis earum provident error
+          molestias. Ratione magni illo sint vel velit ut excepturi consectetur
+          suscipit, earum modi accusamus voluptatem nostrum, praesentium
+          numquam, reiciendis voluptas sit id quisquam. Consequatur in quis
+          reprehenderit modi perspiciatis necessitatibus saepe, quidem, suscipit
+          iure natus dignissimos ipsam, eligendi deleniti accusantium, rerum
+          quibusdam fugit perferendis et optio recusandae sed ratione. Culpa,
+          dolorum reprehenderit harum ab voluptas fuga, nisi eligendi natus
+          maiores illum quas quos et aperiam aut doloremque optio maxime fugiat
+          doloribus. Eum dolorum expedita quam, nesciunt Adipisicing elit.
+          Tempore tempora rerum. The end Consectetur adipisicing elit. Tempore
+          tempora rerum, est autem cupiditate, corporis a qui libero ipsum
+          delectus quidem dolor at nulla, adipisci veniam in reiciendis aut
+          asperiores omnis blanditiis quod quas laborum nam! Fuga ad tempora in
+          aspernatur pariaturlores sunt esse magni, ut, dignissimos. Adipisicing
+          elit. Tempore tempora rerum. Lorem ipsum cupiditate, corporis a qui
+          libero ipsum tempora in delectus quidem dolor at nulla, adipisci
+          veniam in reiciendis aut asperiores omnis blanditiis quod quas laborum
+          nam! Fuga ad tempora in aspernatur pariatur fugit quibusdam tempora in
+          dolores sunt esse magni, ut, dignissimos.
+        </p>
+      </div>
+    </div>
+    <script src="bundled.js"></script>
+  </body>
+</html>
