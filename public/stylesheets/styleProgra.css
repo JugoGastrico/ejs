@@ -1,0 +1,66 @@
+.body-progr {
+  font-family: "Source Sans Pro", sans-serif;
+  color: #e0e0e0;
+  background-color: #0d0d0d;
+}
+
+.container {
+  display: flex;
+  box-sizing: border-box;
+  flex: 1 0 auto;
+  position: relative;
+  max-width: 1150px;
+  margin: 0 40px 0 40px;
+}
+.sidebar {
+  margin-left: -15px;
+
+  margin-right: 0px;
+  height: 100vh;
+  position: fixed;
+  overflow: scroll;
+  z-index: 50;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.sidebar h1 {
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.sidebar h1:hover {
+  color: cyan;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.cuerpo {
+  overflow: hidden;
+  margin-left: 270px;
+  margin-top: 50px;
+  position: absolute;
+  flex-direction: column;
+}
+.cuerpo h1 {
+  letter-spacing: 1.2px;
+  font-size: 17px;
+  color: cyan;
+}
+.cuerpo h2 {
+  color: #9ab3c0;
+  font-size: 16px;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.cuerpo p {
+  margin-left: 15px;
+  font-size: 14px;
+  padding-top: 10px;
+}
+
+.inicio-btn {
+  text-decoration: none;
+  color: #e0e0e0;
+}

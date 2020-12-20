@@ -24,6 +24,12 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/programacion", prograRouter);
 
+// Static Files
+app.use(express.static("public"));
+app.use("/css", express.static(__dirname + "public/css"));
+app.use("/js", express.static(__dirname + "public/js"));
+app.use("/img", express.static(__dirname + "public/images"));
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
