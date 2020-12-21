@@ -7,6 +7,8 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var prograRouter = require("./routes/programacion");
+var errorconstRouter = require("./routes/ingenieria");
+var formulario = require("./routes/contacto");
 
 var app = express();
 
@@ -23,6 +25,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/programacion", prograRouter);
+app.use("/ingenieria", errorconstRouter);
+app.use("/contactanos", formulario);
 
 // Static Files
 app.use(express.static("public"));

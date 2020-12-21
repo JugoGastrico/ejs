@@ -1,309 +1,210 @@
 var ScrollOut = (function () {
   "use strict";
-
-  function clamp(v, min, max) {
-    return min > v ? min : max < v ? max : v;
+  function S(e, t, n) {
+    return e < t ? t : n < e ? n : e;
   }
-  function sign(x) {
-    return +(x > 0) - +(x < 0);
+  function T(e) {
+    return +(0 < e) - +(e < 0);
   }
-  function round(n) {
-    return Math.round(n * 10000) / 10000;
+  var q,
+    t = {};
+  function n(e) {
+    return "-" + e[0].toLowerCase();
   }
-
-  var cache = {};
-  function replacer(match) {
-    return "-" + match[0].toLowerCase();
+  function d(e) {
+    return t[e] || (t[e] = e.replace(/([A-Z])/g, n));
   }
-  function hyphenate(value) {
-    return cache[value] || (cache[value] = value.replace(/([A-Z])/g, replacer));
+  function v(e, t) {
+    return e && 0 !== e.length
+      ? e.nodeName
+        ? [e]
+        : [].slice.call(
+            e[0].nodeName
+              ? e
+              : (t || document.documentElement).querySelectorAll(e)
+          )
+      : [];
   }
-
-  /** find elements */
-  function $(e, parent) {
-    return !e || e.length === 0
-      ? // null or empty string returns empty array
-        []
-      : e.nodeName
-      ? // a single element is wrapped in an array
-        [e]
-      : // selector and NodeList are converted to Element[]
-        [].slice.call(
-          e[0].nodeName
-            ? e
-            : (parent || document.documentElement).querySelectorAll(e)
-        );
+  function h(e, t) {
+    for (var n in t) n.indexOf("_") && e.setAttribute("data-" + d(n), t[n]);
   }
-  function setAttrs(el, attrs) {
-    // tslint:disable-next-line:forin
-    for (var key in attrs) {
-      if (key.indexOf("_")) {
-        el.setAttribute("data-" + hyphenate(key), attrs[key]);
-      }
-    }
+  var z = [];
+  function e() {
+    (q = 0),
+      z.slice().forEach(function (e) {
+        return e();
+      }),
+      F();
   }
-  function setProps(cssProps) {
-    return function (el, props) {
-      for (var key in props) {
-        if (key.indexOf("_") && (cssProps === true || cssProps[key])) {
-          el.style.setProperty("--" + hyphenate(key), round(props[key]));
-        }
-      }
-    };
+  function F() {
+    !q && z.length && (q = requestAnimationFrame(e));
   }
-
-  var clearTask;
-  var subscribers = [];
-  function loop() {
-    clearTask = 0;
-    subscribers.slice().forEach(function (s2) {
-      return s2();
-    });
-    enqueue();
+  function N(e, t, n, r) {
+    return "function" == typeof e ? e(t, n, r) : e;
   }
-  function enqueue() {
-    if (!clearTask && subscribers.length) {
-      clearTask = requestAnimationFrame(loop);
-    }
-  }
-  function subscribe(fn) {
-    subscribers.push(fn);
-    enqueue();
-    return function () {
-      subscribers = subscribers.filter(function (s) {
-        return s !== fn;
-      });
-      if (!subscribers.length && clearTask) {
-        cancelAnimationFrame(clearTask);
-        clearTask = 0;
-      }
-    };
-  }
-
-  function unwrap(value, el, ctx, doc) {
-    return typeof value === "function" ? value(el, ctx, doc) : value;
-  }
-  function noop() {}
-
-  /**
-   * Creates a new instance of ScrollOut that marks elements in the viewport with
-   * an "in" class and marks elements outside of the viewport with an "out"
-   */
-  // tslint:disable-next-line:no-default-export
-  function main(opts) {
-    // Apply default options.
-    opts = opts || {};
-    // Debounce onChange/onHidden/onShown.
-    var onChange = opts.onChange || noop;
-    var onHidden = opts.onHidden || noop;
-    var onShown = opts.onShown || noop;
-    var onScroll = opts.onScroll || noop;
-    var props = opts.cssProps ? setProps(opts.cssProps) : noop;
-    var se = opts.scrollingElement;
-    var container = se ? $(se)[0] : window;
-    var doc = se ? $(se)[0] : document.documentElement;
-    var rootChanged = false;
-    var scrollingElementContext = {};
-    var elementContextList = [];
-    var clientOffsetX, clientOffsety;
-    var sub;
-    function index() {
-      elementContextList = $(
-        opts.targets || "[data-scroll]",
-        $(opts.scope || doc)[0]
-      ).map(function (el) {
-        return { element: el };
+  function m() {}
+  return function (L) {
+    var i,
+      P,
+      _,
+      H,
+      o = (L = L || {}).onChange || m,
+      l = L.onHidden || m,
+      c = L.onShown || m,
+      s = L.onScroll || m,
+      f = L.cssProps
+        ? ((i = L.cssProps),
+          function (e, t) {
+            for (var n in t)
+              n.indexOf("_") &&
+                (!0 === i || i[n]) &&
+                e.style.setProperty(
+                  "--" + d(n),
+                  ((r = t[n]), Math.round(1e4 * r) / 1e4)
+                );
+            var r;
+          })
+        : m,
+      e = L.scrollingElement,
+      A = e ? v(e)[0] : window,
+      W = e ? v(e)[0] : document.documentElement,
+      x = !1,
+      O = {},
+      y = [];
+    function t() {
+      y = v(L.targets || "[data-scroll]", v(L.scope || W)[0]).map(function (e) {
+        return { element: e };
       });
     }
-    function update() {
-      // Calculate position, direction and ratio.
-      var clientWidth = doc.clientWidth;
-      var clientHeight = doc.clientHeight;
-      var scrollDirX = sign(
-        -clientOffsetX + (clientOffsetX = doc.scrollLeft || window.pageXOffset)
-      );
-      var scrollDirY = sign(
-        -clientOffsety + (clientOffsety = doc.scrollTop || window.pageYOffset)
-      );
-      var scrollPercentX =
-        doc.scrollLeft / (doc.scrollWidth - clientWidth || 1);
-      var scrollPercentY =
-        doc.scrollTop / (doc.scrollHeight - clientHeight || 1);
-      // Detect if the root context has changed.
-      rootChanged =
-        rootChanged ||
-        scrollingElementContext.scrollDirX !== scrollDirX ||
-        scrollingElementContext.scrollDirY !== scrollDirY ||
-        scrollingElementContext.scrollPercentX !== scrollPercentX ||
-        scrollingElementContext.scrollPercentY !== scrollPercentY;
-      scrollingElementContext.scrollDirX = scrollDirX;
-      scrollingElementContext.scrollDirY = scrollDirY;
-      scrollingElementContext.scrollPercentX = scrollPercentX;
-      scrollingElementContext.scrollPercentY = scrollPercentY;
-      var childChanged = false;
-      for (var index_1 = 0; index_1 < elementContextList.length; index_1++) {
-        var ctx = elementContextList[index_1];
-        var element = ctx.element;
-        // find the distance from the element to the scrolling container
-        var target = element;
-        var offsetX = 0;
-        var offsetY = 0;
-        do {
-          offsetX += target.offsetLeft;
-          offsetY += target.offsetTop;
-          target = target.offsetParent;
-        } while (target && target !== container);
-        // Get element dimensions.
-        var elementHeight = element.clientHeight || element.offsetHeight || 0;
-        var elementWidth = element.clientWidth || element.offsetWidth || 0;
-        // Find visible ratios for each element.
-        var visibleX =
-          (clamp(
-            offsetX + elementWidth,
-            clientOffsetX,
-            clientOffsetX + clientWidth
-          ) -
-            clamp(offsetX, clientOffsetX, clientOffsetX + clientWidth)) /
-          elementWidth;
-        var visibleY =
-          (clamp(
-            offsetY + elementHeight,
-            clientOffsety,
-            clientOffsety + clientHeight
-          ) -
-            clamp(offsetY, clientOffsety, clientOffsety + clientHeight)) /
-          elementHeight;
-        var intersectX = visibleX === 1 ? 0 : sign(offsetX - clientOffsetX);
-        var intersectY = visibleY === 1 ? 0 : sign(offsetY - clientOffsety);
-        var viewportX = clamp(
-          (clientOffsetX - (elementWidth / 2 + offsetX - clientWidth / 2)) /
-            (clientWidth / 2),
-          -1,
-          1
-        );
-        var viewportY = clamp(
-          (clientOffsety - (elementHeight / 2 + offsetY - clientHeight / 2)) /
-            (clientHeight / 2),
-          -1,
-          1
-        );
-        var visible = void 0;
-        if (opts.offset) {
-          visible =
-            unwrap(opts.offset, element, ctx, doc) <= clientOffsety ? 1 : 0;
-        } else if (
-          (unwrap(opts.threshold, element, ctx, doc) || 0) <
-          visibleX * visibleY
-        ) {
-          visible = 1;
-        } else {
-          visible = 0;
-        }
-        var changedVisible = ctx.visible !== visible;
-        var changed =
-          ctx._changed ||
-          changedVisible ||
-          ctx.visibleX !== visibleX ||
-          ctx.visibleY !== visibleY ||
-          ctx.index !== index_1 ||
-          ctx.elementHeight !== elementHeight ||
-          ctx.elementWidth !== elementWidth ||
-          ctx.offsetX !== offsetX ||
-          ctx.offsetY !== offsetY ||
-          ctx.intersectX !== ctx.intersectX ||
-          ctx.intersectY !== ctx.intersectY ||
-          ctx.viewportX !== viewportX ||
-          ctx.viewportY !== viewportY;
-        if (changed) {
-          childChanged = true;
-          ctx._changed = true;
-          ctx._visibleChanged = changedVisible;
-          ctx.visible = visible;
-          ctx.elementHeight = elementHeight;
-          ctx.elementWidth = elementWidth;
-          ctx.index = index_1;
-          ctx.offsetX = offsetX;
-          ctx.offsetY = offsetY;
-          ctx.visibleX = visibleX;
-          ctx.visibleY = visibleY;
-          ctx.intersectX = intersectX;
-          ctx.intersectY = intersectY;
-          ctx.viewportX = viewportX;
-          ctx.viewportY = viewportY;
-          ctx.visible = visible;
-        }
-      }
-      if (!sub && (rootChanged || childChanged)) {
-        sub = subscribe(render);
-      }
-    }
-    function render() {
-      maybeUnsubscribe();
-      // Update root attributes if they have changed.
-      if (rootChanged) {
-        rootChanged = false;
-        setAttrs(doc, {
-          scrollDirX: scrollingElementContext.scrollDirX,
-          scrollDirY: scrollingElementContext.scrollDirY,
-        });
-        props(doc, scrollingElementContext);
-        onScroll(doc, scrollingElementContext, elementContextList);
-      }
-      var len = elementContextList.length;
-      for (var x = len - 1; x > -1; x--) {
-        var ctx = elementContextList[x];
-        var el = ctx.element;
-        var visible = ctx.visible;
-        var justOnce = el.hasAttribute("scrollout-once") || false; // Once
-        if (ctx._changed) {
-          ctx._changed = false;
-          props(el, ctx);
-        }
-        if (ctx._visibleChanged) {
-          setAttrs(el, { scroll: visible ? "in" : "out" });
-          onChange(el, ctx, doc);
-          (visible ? onShown : onHidden)(el, ctx, doc);
-        }
-        // if this is shown multiple times, keep it in the list
-        if (visible && (opts.once || justOnce)) {
-          // or if this element just display it once
-          elementContextList.splice(x, 1);
-        }
-      }
-    }
-    function maybeUnsubscribe() {
-      if (sub) {
-        sub();
-        sub = undefined;
-      }
-    }
-    // Run initialize index.
-    index();
-    update();
-    render();
-    // Collapses sequential updates into a single update.
-    var updateTaskId = 0;
-    var onUpdate = function () {
-      updateTaskId =
-        updateTaskId ||
-        setTimeout(function () {
-          updateTaskId = 0;
-          update();
-        }, 0);
-    };
-    // Hook up document listeners to automatically detect changes.
-    window.addEventListener("resize", onUpdate);
-    container.addEventListener("scroll", onUpdate);
-    return {
-      index: index,
-      update: update,
-      teardown: function () {
-        maybeUnsubscribe();
-        window.removeEventListener("resize", onUpdate);
-        container.removeEventListener("scroll", onUpdate);
-      },
-    };
-  }
+    function n() {
+      var e = W.clientWidth,
+        t = W.clientHeight,
+        n = T(-P + (P = W.scrollLeft || window.pageXOffset)),
+        r = T(-_ + (_ = W.scrollTop || window.pageYOffset)),
+        i = W.scrollLeft / (W.scrollWidth - e || 1),
+        o = W.scrollTop / (W.scrollHeight - t || 1);
+      (x =
+        x ||
+        O.scrollDirX !== n ||
+        O.scrollDirY !== r ||
+        O.scrollPercentX !== i ||
+        O.scrollPercentY !== o),
+        (O.scrollDirX = n),
+        (O.scrollDirY = r),
+        (O.scrollPercentX = i),
+        (O.scrollPercentY = o);
+      for (var l, c = !1, s = 0; s < y.length; s++) {
+        for (
+          var f = y[s], u = f.element, a = u, d = 0, v = 0;
+          (d += a.offsetLeft),
+            (v += a.offsetTop),
+            (a = a.offsetParent) && a !== A;
 
-  return main;
+        );
+        var h = u.clientHeight || u.offsetHeight || 0,
+          m = u.clientWidth || u.offsetWidth || 0,
+          g = (S(d + m, P, P + e) - S(d, P, P + e)) / m,
+          p = (S(v + h, _, _ + t) - S(v, _, _ + t)) / h,
+          w = 1 === g ? 0 : T(d - P),
+          X = 1 === p ? 0 : T(v - _),
+          Y = S((P - (m / 2 + d - e / 2)) / (e / 2), -1, 1),
+          b = S((_ - (h / 2 + v - t / 2)) / (t / 2), -1, 1),
+          D = void 0;
+        D = L.offset
+          ? N(L.offset, u, f, W) > _
+            ? 0
+            : 1
+          : (N(L.threshold, u, f, W) || 0) < g * p
+          ? 1
+          : 0;
+        var E = f.visible !== D;
+        (f._changed ||
+          E ||
+          f.visibleX !== g ||
+          f.visibleY !== p ||
+          f.index !== s ||
+          f.elementHeight !== h ||
+          f.elementWidth !== m ||
+          f.offsetX !== d ||
+          f.offsetY !== v ||
+          f.intersectX != f.intersectX ||
+          f.intersectY != f.intersectY ||
+          f.viewportX !== Y ||
+          f.viewportY !== b) &&
+          ((c = !0),
+          (f._changed = !0),
+          (f._visibleChanged = E),
+          (f.visible = D),
+          (f.elementHeight = h),
+          (f.elementWidth = m),
+          (f.index = s),
+          (f.offsetX = d),
+          (f.offsetY = v),
+          (f.visibleX = g),
+          (f.visibleY = p),
+          (f.intersectX = w),
+          (f.intersectY = X),
+          (f.viewportX = Y),
+          (f.viewportY = b),
+          (f.visible = D));
+      }
+      H ||
+        (!x && !c) ||
+        ((l = C),
+        z.push(l),
+        F(),
+        (H = function () {
+          !(z = z.filter(function (e) {
+            return e !== l;
+          })).length &&
+            q &&
+            (cancelAnimationFrame(q), (q = 0));
+        }));
+    }
+    function C() {
+      u(),
+        x &&
+          ((x = !1),
+          h(W, { scrollDirX: O.scrollDirX, scrollDirY: O.scrollDirY }),
+          f(W, O),
+          s(W, O, y));
+      for (var e = y.length - 1; -1 < e; e--) {
+        var t = y[e],
+          n = t.element,
+          r = t.visible,
+          i = n.hasAttribute("scrollout-once") || !1;
+        t._changed && ((t._changed = !1), f(n, t)),
+          t._visibleChanged &&
+            (h(n, { scroll: r ? "in" : "out" }),
+            o(n, t, W),
+            (r ? c : l)(n, t, W)),
+          r && (L.once || i) && y.splice(e, 1);
+      }
+    }
+    function u() {
+      H && (H(), (H = void 0));
+    }
+    t(), n(), C();
+    var r = 0,
+      a = function () {
+        r =
+          r ||
+          setTimeout(function () {
+            (r = 0), n();
+          }, 0);
+      };
+    return (
+      window.addEventListener("resize", a),
+      A.addEventListener("scroll", a),
+      {
+        index: t,
+        update: n,
+        teardown: function () {
+          u(),
+            window.removeEventListener("resize", a),
+            A.removeEventListener("scroll", a);
+        },
+      }
+    );
+  };
 })();

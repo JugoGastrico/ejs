@@ -1,0 +1,168 @@
+.important {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 40px auto;
+}
+.important__tituloMain {
+  margin-bottom: 20px;
+  font-size: 25px;
+  letter-spacing: 1.1px;
+  transition: opacity 500ms, transform 500ms;
+  margin-top: 50px;
+}
+.ct {
+  background-color: #e700009b;
+  width: 100%;
+  color: whitesmoke;
+}
+.secc1 {
+  color: #0d0d0d;
+  display: flex;
+  background-color: #ff8c009d;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 7px;
+}
+.secc1 h1,
+.secc2 h1,
+.secc3 h1,
+.secc4 h1 {
+  font-size: 22px;
+  letter-spacing: 1.1px;
+}
+.secc2 {
+  color: #0d0d0d;
+  display: flex;
+  background-color: #ffee00ad;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 7px;
+}
+.secc3 {
+  color: #0d0d0d;
+  display: flex;
+  background-color: #00811ea6;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 7px;
+}
+.secc4 {
+  color: #0d0d0d;
+  display: flex;
+  background-color: #0044ffa8;
+  flex-direction: column;
+  width: 100%;
+  padding-bottom: 7px;
+}
+.bw {
+  background-color: #770089a8;
+  color: whitesmoke;
+  width: 100%;
+}
+
+.important__tituloMain {
+  text-align: center;
+}
+.important__titulos {
+  text-align: center;
+}
+.important__img {
+  margin: 0 auto 5px auto;
+}
+.important p {
+  text-align: center;
+}
+@media (min-width: 580px) {
+  .important {
+    margin: 0 auto 40px auto;
+    width: 70%;
+    height: 90vh;
+  }
+  .ct,
+  .bw {
+    margin: 0;
+  }
+}
+@media (min-width: 880px) {
+  .important {
+    width: 100%;
+    background-color: #0d0d0dfd;
+  }
+  .important__tituloMain {
+    color: whitesmoke;
+    margin-top: 70px;
+    font-size: 30px;
+  }
+  .important__tituloMain[data-scroll="out"] {
+    opacity: 0;
+    transform: translateX(100%) scale(0.4);
+  }
+  .important__tituloMain[data-scroll="in"] {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+  }
+  .important__texto {
+    color: #0d0d0d;
+    font-size: 700;
+  }
+
+  .columns {
+    display: grid;
+    max-width: 1280px;
+    grid-template-columns: repeat(auto-fit, 48%);
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    width: 70%;
+  }
+
+  .ct,
+  .bw {
+    background-color: #0d0d0d00;
+
+    margin-bottom: 25px;
+    opacity: 0;
+  }
+  .bw {
+    margin-top: 25px;
+  }
+  .secc1,
+  .secc2,
+  .secc3,
+  .secc4 {
+    background-color: rgba(255, 255, 255, 0.945);
+  }
+  .secc1:hover {
+    color: white;
+    background-color: #eca54d;
+    transform: scale(1.04);
+  }
+
+  .secc2:hover {
+    color: white;
+    background-color: #eca54d;
+    transform: scale(1.04);
+  }
+
+  .secc3:hover {
+    color: white;
+    background-color: #eca54d;
+    transform: scale(1.04);
+  }
+
+  .secc4:hover {
+    color: white;
+    background-color: #eca54d;
+    transform: scale(1.04);
+  }
+}
+@media (min-width: 1200px) {
+  .important {
+    height: 80vh;
+  }
+  .columns {
+    width: 50%;
+  }
+} ;
