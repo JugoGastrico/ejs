@@ -9,6 +9,7 @@ var usersRouter = require("./routes/users");
 var prograRouter = require("./routes/programacion");
 var errorconstRouter = require("./routes/ingenieria");
 var formulario = require("./routes/contacto");
+var formContact = require("./routes/formulario");
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use("/users", usersRouter);
 app.use("/programacion", prograRouter);
 app.use("/ingenieria", errorconstRouter);
 app.use("/contactanos", formulario);
+app.use("/formulario", formContact);
 
 // Static Files
 app.use(express.static("public"));

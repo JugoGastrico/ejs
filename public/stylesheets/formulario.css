@@ -1,0 +1,93 @@
+.form {
+  padding-top: 60px;
+  margin-bottom: 100px;
+}
+.form__titulo {
+  text-align: center;
+}
+input,
+textarea {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 75%;
+}
+input[type="email"],
+input[type="text"],
+input[type="tel"],
+input[type="company"] {
+  width: 90%;
+  display: block;
+  box-sizing: border-box;
+  padding: 10px 10px;
+  height: 40px;
+  color: #eca54d;
+  border: 1px solid #cdcdcd;
+  outline: none;
+  font-size: 15px;
+  background-color: #0d0d0d;
+  margin: 0 auto;
+}
+input[type="submit"] {
+  font-size: 15px;
+  text-align: center;
+  float: right;
+  width: 14%;
+  margin-right: 20px;
+  margin-top: 10px;
+  background-color: #0d0d0d;
+  color: white;
+  font-weight: bolder;
+  border: none;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #0d0d0d;
+  color: #eca54d;
+  font-weight: bolder;
+  border: 2px solid rgba(211, 255, 213, 0.13);
+}
+label[class="comment"] {
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 50px;
+}
+textarea[type="comment"] {
+  margin: 0 auto;
+  width: 90%;
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  padding: 10px;
+  font-size: 15px;
+  color: #eca54d;
+  background-color: #0d0d0d;
+}
+textarea[type="comment"]:hover {
+  border: 1px solid #eca54d;
+}
+input[type="email"]:hover,
+input[type="text"]:hover,
+input[type="tel"]:hover,
+input[type="password"]:hover {
+  border: 1px solid #eca54d;
+  box-shadow: inset 2px 2px 2px rgba(211, 255, 213, 0.13);
+}
+
+@media (min-width: 880px) {
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"] {
+    width: 80%;
+  }
+  input[type="submit"] {
+    width: 8%;
+    margin-right: 0;
+  }
+  textarea[type="comment"] {
+    width: 80%;
+    height: 350px;
+  }
+  .form {
+    padding-top: 80px;
+    width: 60%;
+    margin: 0 auto;
+  }
+}

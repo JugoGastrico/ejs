@@ -1,12 +1,12 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET home page. */
+/* GET programation page. */
 router.get("/", function (req, res, next) {
   res.render("formulario");
 });
-router.post("/", function (req, res, next) {
-  res.send("formulario");
+router.post("/", function (req, res) {
+  res.render("formulario");
 });
 
 module.exports = router;
