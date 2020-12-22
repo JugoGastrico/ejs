@@ -1,42 +1,14 @@
-/*General Styles*/
-html {
-  scroll-behavior: smooth;
-  height: -webkit-fill-available;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  min-height: -webkit-fill-available;
-  overflow-x: hidden;
-}
-body::-webkit-scrollbar {
-  width: 4px;
-}
-
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px #0d0d0d;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #1abc9c;
-  outline: 1px solid rgb(88, 126, 165);
-  width: 10px;
-}
 .logo {
   width: 50px;
   height: 50px;
+  margin-top: 0;
 }
 
 .home {
   height: 100vh;
   width: 100%;
-  background: url("/images/plants.jpg");
-  background-attachment: fixed;
+  background: url("/images/plantsPhone.jpg");
+  background-attachment: scroll;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -51,10 +23,7 @@ body::-webkit-scrollbar-thumb {
   letter-spacing: 1.2px;
   margin-bottom: 80px;
 }
-.perspective-text,
-.brphone {
-  display: none;
-}
+
 .homeContact {
   color: whitesmoke;
   float: right;
@@ -76,7 +45,7 @@ body::-webkit-scrollbar-thumb {
 /*About Me Styles*/
 .me {
   height: 70vh;
-  max-width: 100%;
+  width: 100%;
   display: flex;
 }
 .me__texto {
@@ -97,33 +66,17 @@ body::-webkit-scrollbar-thumb {
 .space {
   padding: 10px;
 }
-.emojis {
-  font-size: 17px;
-  animation-name: scalex;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-}
-
-@keyframes scalex {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/*ValoresSecc*/
 
 /*Proyectos TITULO*/
 
 .parallax {
   height: 300px;
   width: 100%;
-  background: url("/images/plants.jpg") no-repeat fixed top/cover;
+  background: url("/images/plantsBar.jpg");
+  background-attachment: inherit;
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .text {
   display: flex;
@@ -132,10 +85,6 @@ body::-webkit-scrollbar-thumb {
   transform: translateY(-50%);
   margin: 0px auto;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
-}
-.text:hover {
-  transform: rotateX(35deg) translateY(-50%);
 }
 
 .spanproyect:nth-child(odd) {
@@ -144,25 +93,25 @@ body::-webkit-scrollbar-thumb {
 }
 .spanproyect:nth-child(even) {
   transform: skewY(-15deg);
-  background-color: #0d0d0d;
+  background-color: #ffffff;
   box-shadow: 0 60px 20px rgba(0, 0, 0, 0.1);
 }
 .spanproyect {
   display: block;
-  background-color: #0d0d0d;
-  color: whitesmoke;
+  background-color: #ffffff;
+  color: #0d0d0d;
   font-weight: 900;
   width: 120px;
-  height: 100px;
-  line-height: 105px;
-  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out,
-    background-color 0.3s ease-in-out;
+  height: 80px;
+  line-height: 85px;
   box-shadow: 0 40px 50px rgba(0, 0, 0, 0.1);
 }
 /*Proyectos TIPS*/
 .proyectos {
   background-color: white;
   width: 100%;
+  margin-top: 80px;
+  margin-top: 80px;
 }
 .card {
   text-align: center;
@@ -206,14 +155,20 @@ body::-webkit-scrollbar-thumb {
 
 /*Formulario*/
 .formulario {
-  margin-top: 50px;
-  height: 80vh;
+  height: 100vh;
   animation-name: opacity;
   animation-duration: 3s;
   width: 100%;
+  background: url("/images/walppaper2.png");
+  background-attachment: inherit;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
 }
 .formTitulo {
   margin: 0 auto;
+  padding-top: 35px;
   text-align: center;
   transition: opacity 500ms, transform 500ms;
 }
@@ -222,7 +177,41 @@ body::-webkit-scrollbar-thumb {
   text-align: center;
   margin: 0px auto 15px auto;
 }
-
+.flex {
+  margin-top: 250px;
+  display: flex;
+  justify-content: space-around;
+}
+.formContact {
+  display: flex;
+  flex-direction: column;
+}
+.formContact p {
+  display: flex;
+}
+.formContact img {
+  display: flex;
+  margin-right: 15px;
+}
+.formLogos {
+  margin-bottom: 15px;
+  width: 25px;
+  height: 25px;
+}
+.formBtnContact {
+  flex-direction: column;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.formBtnContact a {
+  text-decoration: none;
+  background-color: white;
+  padding: 15px;
+  color: #0d0d0d;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
 input,
 textarea {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -231,7 +220,7 @@ textarea {
 input[type="email"],
 input[type="text"],
 input[type="tel"] {
-  width: 95%;
+  width: 90%;
   display: block;
   box-sizing: border-box;
   padding: 10px 10px;
@@ -268,7 +257,7 @@ label[class="comment"] {
 }
 textarea[type="comment"] {
   margin: 0 auto;
-  width: 95%;
+  width: 90%;
   display: block;
   box-sizing: border-box;
   height: 300px;
@@ -290,11 +279,7 @@ input[type="password"]:hover {
 .footerStyle {
   padding: 15px 0;
   color: whitesmoke;
-  background: url("/images/plants.jpg");
-  background-attachment: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #0d0d0d;
 }
 
 .footerStyle p {
@@ -304,8 +289,15 @@ input[type="password"]:hover {
 }
 .mapa {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.logo__footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px auto;
 }
 .copy {
   text-align: center;
@@ -335,6 +327,10 @@ input[type="password"]:hover {
   .formulario {
     height: 65vh;
     margin-top: 30px;
+  }
+  .parallax {
+    background-attachment: fixed;
+    background-size: cover;
   }
 }
 /*Responsive design*/
@@ -391,23 +387,24 @@ input[type="password"]:hover {
   input[type="email"],
   input[type="text"],
   input[type="tel"] {
-    width: 100%;
+    width: 80%;
   }
   input[type="submit"] {
     width: 8%;
     margin-right: 0;
   }
   textarea[type="comment"] {
-    width: 100%;
+    width: 80%;
     height: 350px;
   }
   .formulario {
+    height: 130vh;
     width: 100%;
-    margin: 70px auto 100px auto;
+    margin: 70px auto 00px auto;
   }
   .form {
-    width: 50%;
-    background-color: orangered;
+    padding-top: 80px;
+    width: 60%;
     margin: 0 auto;
   }
   .formTitulo[data-scroll="out"] {
@@ -417,26 +414,6 @@ input[type="password"]:hover {
   .formTitulo[data-scroll="in"] {
     opacity: 1;
     transform: translateX(0%) scale(1);
-  }
-  .footer {
-    display: flex;
-  }
-  .footerStyle {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .localizacion {
-    display: none;
-  }
-
-  .mapa {
-    margin: 0;
-    display: flex;
-    position: relative;
-    width: 550px;
   }
 }
 @media (min-width: 1200px) {
@@ -453,4 +430,32 @@ input[type="password"]:hover {
   .formTitulo {
     margin-bottom: 20px;
   }
+  .mapa {
+    display: none;
+  }
 }
+@media (max-width: 360px) {
+  .me {
+    height: 88vh;
+  }
+  .formulario {
+    height: 110vh;
+  }
+}
+
+@media (min-width: 375px) and (min-height: 667px) {
+  .formulario {
+    height: 95vh;
+  }
+  .me {
+    height: 75vh;
+  }
+}
+@media (min-width: 375px) and (min-height: 700px) {
+  .formulario {
+    height: 80vh;
+  }
+  .me {
+    height: 60vh;
+  }
+} ;

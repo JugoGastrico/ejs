@@ -1,0 +1,28 @@
+/*General Styles*/
+html {
+  scroll-behavior: smooth;
+  height: -webkit-fill-available;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Poppins", "Open Sans", sans-serif;
+  min-height: -webkit-fill-available;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  width: 4px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px #0d0d0d;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: orange;
+  outline: 1px solid #0d0d0d;
+  width: 10px;
+}

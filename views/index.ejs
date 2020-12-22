@@ -96,34 +96,20 @@
         </div>  
       </div>
           <div class="formulario" id="contact">
-            <h1 class="formTitulo">Formulario de contacto</h1>
+            <h1 class="formTitulo">Contacto</h1>
             <p class="formTexto">¿Tenes pensado crear tu propia web? ¡Contactame y te ayudo!</p>
-            <form class="form" enctype="text/plain" action="/contactanos" method="POST">
-              <label for="firstname" class="hidden-label"></label>
-              <input
-                id="firstname"
-                type="text"
-                name="firstname"
-                placeholder="Nombre y apellido / Empresa"
-              />
-              <label for="email" class="hidden-label"></label>
-              <input type="email" id="email" name="email" placeholder="Email" />
-              <label for="telephone" class="hidden-label"></label>
-              <input
-                id="telephone"
-                type="tel"
-                name="telephone"
-                placeholder="Teléfono"
-              />
-              <label for="comentario" class="comment"></label>
-              <textarea
-                id="comentario"
-                type="comment"
-                name="comentario"
-                placeholder="Agrega tu texto aquí..."
-              ></textarea>
-              <input class="submit"type="submit" value="Enviar"   />
-            </form>
+            <div class="flex">
+              <div class="formContact">
+                <p><img class="formLogos"  src="/images/email.png"> info@alexandertisko.com</p>
+                <p> <img class="formLogos"  src="/images/phone.png"> +5493434808505</p>
+                <p> <img class="formLogos"  src="/images/locationn.png"> Remote work all over the world - Bs As</p>
+                <p>"Make the world change"</p>
+              </div>
+              <divc class="formBtnContact">
+                <a href="#"><h1>¡Escribeme!</h1></a>
+                <p style="width: 35%;">Si estás interesado en realizar un proyecto o si necesitas algún consejo. </p>
+              </div>
+            </div>
           </div>
     <script src="./javascripts/navbar.js"></script>
     <script src="./javascript/ScrollOut.js"></script>
