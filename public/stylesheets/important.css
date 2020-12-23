@@ -93,7 +93,7 @@
   }
   .important__tituloMain {
     color: whitesmoke;
-    margin-top: 70px;
+    margin-top: 40px;
     font-size: 30px;
   }
   .important__tituloMain[data-scroll="out"] {
@@ -157,10 +157,13 @@
     background-color: #eca54d;
     transform: scale(1.04);
   }
+  .important__tituloMain {
+    margin-bottom: -40px;
+  }
 }
 @media (min-width: 1200px) {
   .important {
-    height: 80vh;
+    height: 76vh;
   }
   .columns {
     width: 50%;

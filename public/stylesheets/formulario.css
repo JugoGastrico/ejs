@@ -1,9 +1,17 @@
 .form {
-  padding-top: 60px;
+  padding-top: 80px;
   margin-bottom: 100px;
 }
 .form__titulo {
   text-align: center;
+  margin-bottom: 30px;
+}
+.form p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.maps {
+  width: 100%;
 }
 input,
 textarea {
@@ -72,9 +80,15 @@ input[type="password"]:hover {
 }
 
 @media (min-width: 880px) {
+  .form {
+    padding-top: 80px;
+    width: 80%;
+    margin: 0 auto;
+  }
   input[type="email"],
   input[type="text"],
-  input[type="tel"] {
+  input[type="tel"],
+  input[type="company"] {
     width: 80%;
   }
   input[type="submit"] {
@@ -85,9 +99,16 @@ input[type="password"]:hover {
     width: 80%;
     height: 350px;
   }
-  .form {
-    padding-top: 80px;
-    width: 60%;
-    margin: 0 auto;
+  input[type="submit"] {
+    margin-right: 95px;
+    margin-bottom: 50px;
+  }
+  @media (min-width: 1200px) {
+    input[type="submit"] {
+      margin-right: 153px;
+    }
+    .maps {
+      margin-bottom: -80px;
+    }
   }
 }

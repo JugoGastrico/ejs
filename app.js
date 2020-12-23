@@ -4,13 +4,6 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 
-var indexRouter = require("./routes/index");
-var usersRouter = require("./routes/users");
-var prograRouter = require("./routes/programacion");
-var errorconstRouter = require("./routes/ingenieria");
-var formulario = require("./routes/contacto");
-var formContact = require("./routes/formulario");
-
 var app = express();
 
 // view engine setup
@@ -23,12 +16,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/programacion", prograRouter);
-app.use("/ingenieria", errorconstRouter);
-app.use("/contactanos", formulario);
-app.use("/formulario", formContact);
+const router = require("./routes/routes");
+app.use("/", router);
 
 // Static Files
 app.use(express.static("public"));

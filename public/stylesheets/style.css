@@ -1,7 +1,6 @@
 .logo {
   width: 50px;
   height: 50px;
-  margin-top: 0;
 }
 
 .home {
@@ -20,14 +19,17 @@
   transform: translateY(25vh);
   color: whitesmoke;
   line-height: 70px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   margin-bottom: 80px;
+  font-family: "Poppins", "Open Sans", sans-serif;
+  font-size: 1200;
 }
 
 .homeContact {
   color: whitesmoke;
   float: right;
   margin: 200px auto 0 auto;
+  font-size: 20px;
 }
 .btnContact {
   background-color: white;
@@ -83,7 +85,7 @@
   justify-content: center;
   padding-top: 295px;
   transform: translateY(-50%);
-  margin: 0px auto;
+
   text-align: center;
 }
 
@@ -113,11 +115,12 @@
   margin-top: 0px;
 }
 .card {
+  transition: opacity 5s, transform 5s;
   text-align: center;
   width: 95%;
   padding: 30px;
   background: #0d0d0d;
-  margin: 30px auto;
+  margin: 50px auto;
   transition: 0.3s ease;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   color: #eca54d;
@@ -179,18 +182,18 @@
   margin-top: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  align-items: center;
 }
 .formContact {
-  width: 90%;
-
-  margin: 50px auto 0 auto;
+  margin: 60px auto 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 .formContact p {
   display: flex;
+}
+.formMake {
+  text-align: center;
 }
 .formContact img {
   display: flex;
@@ -207,8 +210,6 @@
   flex-direction: column;
   text-align: center;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .formBtnContact a {
   font-size: 13px;
@@ -222,7 +223,7 @@
 }
 
 .footerStyle {
-  padding: 15px 0;
+  margin-top: 0px;
   color: whitesmoke;
   background-color: #0d0d0d;
 }
@@ -232,17 +233,12 @@
   font-weight: normal;
   line-height: 30px;
 }
-.mapa {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+
 .logo__footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 15px auto;
+  margin: 5px auto;
 }
 .copy {
   text-align: center;
@@ -252,6 +248,20 @@
   text-decoration: none;
   color: white;
 }
+@media (max-width: 360px) {
+  .me {
+    height: 88vh;
+  }
+  .formulario {
+    height: 110vh;
+  }
+  .homeTitulo {
+    margin-bottom: 0px;
+  }
+  .homeContact {
+    font-size: 16px;
+  }
+}
 @media (min-width: 480px) {
   .homeTitulo {
     margin-bottom: 150px;
@@ -260,18 +270,21 @@
     width: 60%;
   }
   .me {
-    height: 50vh;
+    height: 40vh;
   }
   .me__texto-p {
     margin-top: 40px;
     width: 80%;
   }
   .proyectos {
-    height: 50vh;
+    height: 60vh;
   }
   .formulario {
     height: 65vh;
-    margin-top: 30px;
+    margin-top: 0px;
+    margin-bottom: -70px;
+  }
+  .formContact {
   }
   .parallax {
     background-attachment: fixed;
@@ -288,16 +301,13 @@
     background-size: cover;
   }
   .homeTitulo {
-    font-size: 35px;
-
-    font-weight: 750;
+    font-size: 30px;
+    line-height: 85px;
     letter-spacing: 5px;
     text-transform: uppercase;
     margin-bottom: 150px;
   }
-  .me {
-    height: 60vh;
-  }
+
   .me__texto {
     flex-direction: row;
   }
@@ -325,20 +335,34 @@
     opacity: 1;
     transform: translateX(0%) scale(1);
   }
+  .parallax {
+    margin-top: 50px;
+  }
+
   .card {
     margin-top: 50px;
     width: 30%;
   }
+  .card[data-scroll="out"] {
+    opacity: 0;
+    transform: translateY(-600%) scale(0.4);
+  }
+  .card[data-scroll="in"] {
+    opacity: 1;
+    transform: translateY(0%) scale(1);
+  }
+
   .proyectos {
     padding: 0px;
     display: flex;
     height: 260px;
     margin-top: 40px;
+    margin-bottom: 60px;
   }
   .formulario {
-    height: 80vh;
+    height: 60vh;
     width: 100%;
-    margin: 70px auto -90px auto;
+    margin: 00px auto -130px auto;
   }
   .formTitulo[data-scroll="out"] {
     opacity: 0;
@@ -351,24 +375,14 @@
   .formTexto {
     margin-top: 40px;
   }
-  .flex {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 80px;
-  }
-  .formContact {
-    display: flex;
-    width: none;
-    margin: 0;
-    width: 65%;
-  }
+
   .formBtnContact {
-    flex-direction: row;
-    order: 0;
     animation-name: scalex;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+  }
+  .footerStyle {
+    margin-top: 80px;
   }
 }
 @keyframes scalex {
@@ -383,30 +397,22 @@
   }
 }
 @media (min-width: 1200px) {
+  .proyectos {
+    margin-bottom: 20px;
+  }
   .me__texto-p {
     width: 40%;
   }
   .card {
-    width: 20%;
+    width: 25%;
     height: 200px;
   }
   .formulario {
-    margin-bottom: -150px;
-    margin-top: 150px;
+    margin-bottom: -180px;
+    margin-top: 90px;
   }
   .formTitulo {
     margin-bottom: 20px;
-  }
-  .mapa {
-    display: none;
-  }
-}
-@media (max-width: 360px) {
-  .me {
-    height: 88vh;
-  }
-  .formulario {
-    height: 110vh;
   }
 }
 
