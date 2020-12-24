@@ -248,9 +248,13 @@
   text-decoration: none;
   color: white;
 }
+.botones {
+  display: none;
+}
+
 @media (max-width: 360px) {
   .me {
-    height: 88vh;
+    height: 95vh;
   }
   .formulario {
     height: 110vh;
@@ -275,6 +279,9 @@
   .me__texto-p {
     margin-top: 40px;
     width: 80%;
+  }
+  .me__texto-p img {
+    transform: translateX(50%);
   }
   .proyectos {
     height: 60vh;
@@ -304,7 +311,6 @@
     font-size: 30px;
     line-height: 85px;
     letter-spacing: 5px;
-    text-transform: uppercase;
     margin-bottom: 150px;
   }
 
@@ -314,6 +320,9 @@
   .me__texto-p {
     margin: 0 auto;
     width: 55%;
+  }
+  .me__texto-p img {
+    transform: translateX(150%);
   }
   .me__titulo {
     margin: 0;
@@ -384,6 +393,20 @@
   .footerStyle {
     margin-top: 80px;
   }
+  .botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 2.5%;
+    height: 130px;
+    background-color: #eca54d;
+    border-radius: 15px;
+    position: fixed;
+    bottom: 50%;
+    right: 0;
+    margin-right: 15px;
+  }
 }
 @keyframes scalex {
   0% {
@@ -400,8 +423,15 @@
   .proyectos {
     margin-bottom: 20px;
   }
+
   .me__texto-p {
     width: 40%;
+    margin: auto;
+    padding: 80px 5%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background: #0d0d0d10;
   }
   .card {
     width: 25%;
@@ -413,6 +443,9 @@
   }
   .formTitulo {
     margin-bottom: 20px;
+  }
+  .botones {
+    width: 1.5%;
   }
 }
 
