@@ -1,14 +1,56 @@
+.form__titulo {
+  text-align: center;
+  padding-top: 90px;
+}
+.formSection {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.formSection {
+  flex-basis: 70%;
+  width: 100%;
+  display: flex;
+}
 .form {
   padding-top: 80px;
   margin-bottom: 100px;
+  width: 36%;
 }
-.form__titulo {
-  text-align: center;
-  margin-bottom: 30px;
+
+.formInfoSection {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.form p {
+.textInformativo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
   text-align: center;
-  margin-bottom: 20px;
+}
+.textInformativo p {
+  margin-bottom: 35px;
+}
+.formInfoContact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.formInfoContact p {
+  display: flex;
+}
+.formInfoContact p img {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .maps {
   width: 100%;
@@ -22,24 +64,24 @@ input[type="email"],
 input[type="text"],
 input[type="tel"],
 input[type="company"] {
-  width: 90%;
-  display: block;
+  width: 50%;
+  float: right;
+  flex-direction: row;
+  flex-wrap: wrap;
   box-sizing: border-box;
   padding: 10px 10px;
   height: 40px;
   color: #eca54d;
-  border: 1px solid #cdcdcd;
+  border: 3px solid white;
   outline: none;
   font-size: 15px;
   background-color: #0d0d0d;
-  margin: 0 auto;
 }
 input[type="submit"] {
   font-size: 15px;
   text-align: center;
   float: right;
   width: 14%;
-  margin-right: 20px;
   margin-top: 10px;
   background-color: #0d0d0d;
   color: white;
@@ -59,7 +101,7 @@ label[class="comment"] {
 }
 textarea[type="comment"] {
   margin: 0 auto;
-  width: 90%;
+  width: 100%;
   display: block;
   box-sizing: border-box;
   height: 300px;
@@ -70,45 +112,4 @@ textarea[type="comment"] {
 }
 textarea[type="comment"]:hover {
   border: 1px solid #eca54d;
-}
-input[type="email"]:hover,
-input[type="text"]:hover,
-input[type="tel"]:hover,
-input[type="password"]:hover {
-  border: 1px solid #eca54d;
-  box-shadow: inset 2px 2px 2px rgba(211, 255, 213, 0.13);
-}
-
-@media (min-width: 880px) {
-  .form {
-    padding-top: 80px;
-    width: 80%;
-    margin: 0 auto;
-  }
-  input[type="email"],
-  input[type="text"],
-  input[type="tel"],
-  input[type="company"] {
-    width: 80%;
-  }
-  input[type="submit"] {
-    width: 8%;
-    margin-right: 0;
-  }
-  textarea[type="comment"] {
-    width: 80%;
-    height: 350px;
-  }
-  input[type="submit"] {
-    margin-right: 95px;
-    margin-bottom: 50px;
-  }
-  @media (min-width: 1200px) {
-    input[type="submit"] {
-      margin-right: 153px;
-    }
-    .maps {
-      margin-bottom: -80px;
-    }
-  }
 }

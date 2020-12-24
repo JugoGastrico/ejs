@@ -1,3 +1,5 @@
+//Necesito esto para packages
+
 const path = require("path");
 const webpack = require("webpack");
 

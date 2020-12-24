@@ -1,33 +1,60 @@
-<form class="form" enctype="text/plain" action="/formulario" method="POST">
-  <h1 class="form__titulo">Formulario de contacto</h1>
-  <p>
-    Ponete en contacto conmigo si deseas crear un proyecto, contar tus ideas,
-    tienes preguntas sobre programación / ingeniería, etc.
-  </p>
-  <p>¡Un gusto hablar contigo!</p>
-  <label for="firstname" class="hidden-label"></label>
-  <input
-    id="firstname"
-    type="text"
-    name="username"
-    placeholder="Nombre y apellido"
-  />
-  <input
-    id="empresa"
-    type="company"
-    name="empresa"
-    placeholder="Nombre de empresa"
-  />
-  <label for="email" class="hidden-label"></label>
-  <input type="email" id="email" name="email" placeholder="Email" />
-  <label for="telephone" class="hidden-label"></label>
-  <input id="telephone" type="tel" name="telephone" placeholder="Teléfono" />
-  <label for="comentario" class="comment"></label>
-  <textarea
-    id="comentario"
-    type="comment"
-    name="comentario"
-    placeholder="Agrega tu texto aquí..."
-  ></textarea>
-  <input class="submit" type="submit" value="Enviar" />
-</form>
+<h1 class="form__titulo">Formulario de contacto</h1>
+
+<div class="formSection">
+  <form class="form" enctype="text/plain" action="/formulario" method="POST">
+    <label for="firstname" class="hidden-label"></label>
+    <input
+      id="firstname"
+      type="text"
+      name="username"
+      placeholder="Nombre y apellido"
+    />
+    <input
+      id="empresa"
+      type="company"
+      name="empresa"
+      placeholder="Nombre de empresa"
+    />
+    <label for="email" class="hidden-label"></label>
+    <input type="email" id="email" name="email" placeholder="Email" />
+    <label for="telephone" class="hidden-label"></label>
+    <input id="telephone" type="tel" name="telephone" placeholder="Teléfono" />
+    <label for="comentario" class="comment"></label>
+    <textarea
+      id="comentario"
+      type="comment"
+      name="comentario"
+      placeholder="Agrega tu texto aquí..."
+    ></textarea>
+    <input class="submit" type="submit" value="Enviar" />
+  </form>
+  <div class="formInfoSection">
+    <div class="textInformativo">
+      <p>¡Hola de nuevo!</p>
+
+      <p style="margin-top: -15px">
+        Me alegra que quieras ponerte en contacto. Podes ponerte en contacto
+        para lo que desees, ya sea arrancar un proyecto, recibir
+        recomendaciones, tenes preguntas sobre programación / ingeniería, etc.
+        Para mi es un placer poder contactarte y que charlemos.
+      </p>
+
+      <p>
+        Te podes poner en contacto, ya sea completando el formulario o bien
+        escribiendome a los medios de contacto de acá abajo.
+      </p>
+      <p><b>¡Te espero!</b></p>
+    </div>
+    <div class="formInfoContact">
+      <p>
+        <img class="formLogos" src="/images/email.png" />
+        info@alexandertisko.com
+      </p>
+      <p><img class="formLogos" src="/images/phone.png" /> +5493434808505</p>
+      <p>
+        <img class="formLogos" src="/images/locationn.png" /> Trabajo remoto -
+        De Bs As al mundo.
+      </p>
+    </div>
+  </div>
+</div>
