@@ -46,9 +46,16 @@
 
 /*About Me Styles*/
 .me {
-  height: 70vh;
+  height: 73vh;
   width: 100%;
   display: flex;
+}
+.comillas {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 0 auto;
 }
 .me__texto {
   align-items: center;
@@ -223,7 +230,7 @@
 }
 
 .footerStyle {
-  margin-top: 0px;
+  margin-top: -10px;
   color: whitesmoke;
   background-color: #0d0d0d;
 }
@@ -391,7 +398,7 @@
     animation-iteration-count: infinite;
   }
   .footerStyle {
-    margin-top: 80px;
+    margin-top: 110px;
   }
   .botones {
     display: flex;
@@ -423,7 +430,8 @@
   .proyectos {
     margin-bottom: 20px;
   }
-
+  .footerStyle {
+  }
   .me__texto-p {
     width: 40%;
     margin: auto;
@@ -454,7 +462,7 @@
     height: 95vh;
   }
   .me {
-    height: 75vh;
+    height: 78vh;
   }
 }
 @media (min-width: 375px) and (min-height: 700px) {
@@ -462,6 +470,6 @@
     height: 80vh;
   }
   .me {
-    height: 60vh;
+    height: 67vh;
   }
 } ;

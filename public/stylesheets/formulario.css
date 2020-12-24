@@ -54,6 +54,7 @@
 }
 .maps {
   width: 100%;
+  margin-bottom: -115px;
 }
 input,
 textarea {
@@ -112,4 +113,44 @@ textarea[type="comment"] {
 }
 textarea[type="comment"]:hover {
   border: 1px solid #eca54d;
+}
+
+@media (max-width: 880px) {
+  input[type="email"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="company"] {
+    width: 100%;
+  }
+  .formSection {
+    height: 130vh;
+    flex-direction: column;
+  }
+  .textInformativo {
+    width: 90%;
+  }
+  .textInformativo p {
+    margin-bottom: 30px;
+  }
+  .form {
+    width: 90%;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+}
+@media (max-width: 580px) {
+  .maps {
+    margin-bottom: 0px;
+  }
+}
+@media (max-width: 375px) {
+  .formSection {
+    height: 170vh;
+  }
+}
+@media (max-width: 360px) {
+  .formSection {
+    height: 190vh;
+    flex-direction: column;
+  }
 }
