@@ -1,15 +1,38 @@
+.menuProgra {
+  padding-top: 90px;
+  display: flex;
+  color: white;
+}
+.menuProgra ul {
+  display: flex;
+  flex-direction: column;
+}
+.menuProgra ul li {
+  padding-bottom: 8px;
+}
+
 .container {
+  margin: 0 auto;
+  background-color: #0d0d0df8;
+  color: white;
+  width: 100%;
 }
-h1 {
-  border-bottom: 2px solid rgba(51, 51, 51, 0.137);
-}
-h1,
-h2 {
-  font-family: "Dosis", "Open Sans", sans-serif;
+.cuerpo h1 {
   text-align: center;
-  margin-bottom: 15px;
+  font-family: "Dosis", "Open Sans", sans-serif;
+  color: orange;
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-size: 100;
 }
-a {
+.cuerpo h4 {
+  text-align: start;
+  font-size: 16px;
+  margin-left: 8px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid white;
+}
+.cuerpo a {
   color: orange;
 }
 
@@ -17,15 +40,20 @@ a {
   padding-top: 70px;
   margin-bottom: 30px;
 }
+.marginFixed {
+  padding-top: 0px;
+}
 p {
   margin: 0 auto;
   width: 95%;
   font-family: "Open Sans", sans-serif;
   margin-bottom: 20px;
-  text-align: center;
 }
 img {
-  padding: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
   width: 200px;
   height: 200px;
 }

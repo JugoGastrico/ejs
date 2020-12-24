@@ -20,30 +20,29 @@
     <link rel='stylesheet' href='/stylesheets/general.css' />
   </head>
   <body class="body-progr">
-    <nav class="menu" id="menu">
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-      <a href="/" action="/" method="POST"><img class="logo logo__header" src="images/logo.png"></a>
-      <ul class="menu-links">
-        <li><a class="one" href="/">Inicio</a></li>
-        <li><a class="one" href="#initial-visual-studio">Prepara tu Visual Studio</a></li>
-        <li>
-          <a class="two" href=" #webpack">Webpack</a>
-        </li>
-        <li><a class="three" href="#scroll-out">Scroll-Out</a></li>
-        <li><a class="four" href="#flex">Display Flex</a></li>
-      </ul>
-    </nav>
+    <%- include('includes/header') %>
+
     <div class="container">
+      <div class="menuProgra">
+        <ul>
+          <li>Prepara tu Visual Studio</li>
+          <li>Webpack</li>
+          <li>Scroll-Out</li>
+        </ul>
+      </div>
+      
       <div class="cuerpo">
         <h1 class="initVS__titulo" id="initial-visual-studio">
+          Tips de programación
+        </h1>
+        <h4>¿De qué trata esta sección?</h4>
+        <p>Esta sección tiene la funcionalidad de compartir los conocimientos adquiridos en programación.
+          De esta manera, la página también funcionará como una herramienta informativa para cualquier lector.
+        </p>
+        <h1 class="initVS__titulo marginFixed">
           Prepara tu Visual Studio
         </h1>
-     
-        <h2>Antes de empezar</h2>
+        <h4>Antes de empezar</h4>
         <p>
           Para arrancar nuestro proyecto correctamente, debemos tener instalada
           en nuestra terminal <a>npm</a>. Para ello, puedes ingresar a este enlace que
@@ -59,7 +58,7 @@
             >https://nodejs.org/es/download/</a
           >
         </p>
-        <h2>Step 1</h2>
+        <h4>Step 1</h4>
         <p>
           En esta sección vamos a aprender de manera responsive, cómo dejar tu
           Visual Studio Code ordenado y preparado para trabajar. Es importante
@@ -80,7 +79,7 @@
           
           <img src="./images/Programacion-section/Webpacks/folders.png" />
         </p>
-        <h2>Step 2</h2>
+        <h4>Step 2</h4>
         <p>
           Dentro de la carpeta app, crearemos un archivo <a>index.html</a> (para crear una archivo, simplemente haz clic derecho en la carpeta y New file), dentro de
           este archivo escribiremos "html" (sin comillas), y nos aparecerá la opción html:5,
@@ -93,7 +92,7 @@
           archivo que se llamará <a>App.js</a>. Este va a ser el archivo principal
           javascript de tu proyecto.
         </p>
-        <h2>Step3</h2>
+        <h4>Step3</h4>
         <p>
           Una vez realizado todo esto, abriremos la terminal de nuestro
           proyecto. Para hacerlo, arriba de todo verás una opción que dice
@@ -106,11 +105,20 @@
         <p>
           Este comando lo que hace es crearte un archivo .json. En este arhivo
           se guardarán todos los paquetes que instales a futuro en tu proyecto.
+          En la carpeta de tus archivos podrás ver que ahora existen 2 archivos nuevos, package.
         </p>
-        <p></p>
+
+        <p>Hasta ahora creamos todas las carpetas con los archivos donde realizarás el proyecto. Queda únicamente instalar los paquetes que utilizaremos.</p>
 
         <h1 id="webpack">Webpack</h1>
         <p>
+          A continuación vamos a instalar <a href="https://webpack.js.org/">Webpack. </a>
+          Webpack es una herramienta la cual nos va a permitir empaquetar y exportar todos los ficheros necesarios para que el proyecto funcione con todas las dependencias frontend.</p>
+        <p>Para instalarlo, simplemente ingresaremos a nuestra terminal y pondremos <a>npm install webpack webpac-cli --save-dev.</a> (Importante copiarlo tal cual).
+
+        </p>
+        <p>Si ingresamos a nuestro archivo package.json, veremos que en las dependecias ahora aparecen estos 2 nuevos paquetes instalados.</p>
+          
           If you've been following the guides from the start, you will now have
           a small project that shows "Hello webpack". Now let's try to
           incorporate some other assets, like images, to see how they can be
