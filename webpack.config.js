@@ -1,12 +1,23 @@
-//Necesito esto para packages
+const path = require('path');
 
-const path = require("path");
-const webpack = require("webpack");
-
-module.exports = {
-  entry: false,
+const config = {
   output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "myapp"),
+    filename: 'my-first-webpack.bundle.js'
   },
+  module: {
+    rules: [
+      {
+          test: /\.ejs$/,
+          use: [
+              {
+                loader: "ejs-webpack-loader",
+                options: {
+                  data: {title: "New Title", someVar:"hello world"},
+                  htmlmin: true
+                }
+              }
+          ]
+      }
+    ]
+  }
 };

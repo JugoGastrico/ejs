@@ -9,18 +9,20 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
-    "cookie-parser": "~1.4.4",
+    "cookie-parser": "^1.4.5",
     "csurf": "^1.11.0",
     "debug": "~2.6.9",
     "dompurify": "^2.2.6",
     "ejs": "~2.6.1",
     "express": "~4.16.1",
+    "express-validator": "^6.9.0",
     "http-errors": "~1.6.3",
     "jquery": "^3.5.1",
     "morgan": "~1.9.1",
     "sanitize-html": "^2.3.0"
   },
   "devDependencies": {
+    "body-parser": "^1.19.0",
     "nodemon": "^2.0.6",
     "scroll-out": "^2.2.12",
     "webpack": "^5.11.0",

@@ -17,7 +17,7 @@ router.get("/ingenieria", ingenieriaController.ing);
 router.post("/ingenieria", ingenieriaController.ing);
 router.get("/contactanos", formularioController.form);
 router.post("/contactanos", formularioController.form);
-router.get("/formulario", formSubmit.formSubmited);
-router.post("/formulario", formSubmit.formSubmited);
+router.get("/formulario" ,formSubmit.formSubmited);
+router.post("/formulario" ,formSubmit.formSubmited);
 
 module.exports = router;

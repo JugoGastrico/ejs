@@ -1,4 +1,4 @@
-exports.formSubmited = function (req, res, next) {
-  res.send("gracias por llenar el");
+exports.formSubmited = function (req, res) {
+  res.send(req.body);
   console.log(req.body);
 };
