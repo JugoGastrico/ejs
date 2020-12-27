@@ -15,30 +15,34 @@
     <div class="me" id="me">
       <div class="me__texto">
         <div class="me__titulo">
-          <h1 class="me__titulo--background">Sobre mi</h1>   
+          <h1 class="me__titulo--background">Sobre mi</h1>  
         </div>
-
         <div class="me__texto-p">
-          <p class="emojis">            <img class="comillas"src="/images/comilla.png" >
-            &#128526; ¡Hola! &#128526;</p>
-          <div class="space"></div>
-
           <p>Mi nombre es Alexander Tisko, soy
             estudiante de Ingeniería Industrial y mi hobbie es la
             programación. Tengo experiencia en HTML, CSS, JavaScript,
-            frontend y backend. </p>
-          <div class="space"></div>
-          <p>Vengo de una familia apasionada por el
+            frontend y backend. 
+            Vengo de una familia apasionada por el
             marketing, creo que estas dos combinaciones, progrmación y
             marketing, se les puede sacar un excelente provecho.
             Estoy en progreso de crear mi propia empresa, la cual ofreceremos todo tipo de soluciones digitales. Desde diseño y creación de web, a diseño gráfico empresarial y marketing digital.
-          </p>
-      
-
+          </p> 
         </div>
-
+        
+      </div>  
+      <div class="me__items">
+        <button type="button" onclick="mostrar();">Prueba</button>
+      <div id="item" style="display: none;">
+        <p>asdasd</p>
       </div>
+      <button type="button" onclick="mostrar1();">Prueba2</button>
+      <div id="item1" style="display: none;">
+        <p>asdasdasdasdasdasd</p>
+      </div>
+      </div>
+      
     </div>
+    
     <div class="important">   
       <h1 class="important__tituloMain">¿Qué es importante?</h1>
       <p class="ct">(&#127881; Color Time &#127881;)</p>
@@ -101,6 +105,10 @@
         </div>  
       </div>
           <div class="formulario" id="contact">
+            <button onclick="func()">Prueba</button>
+            <div id="try">
+              asdasd
+            </div>
             <h1 class="formTitulo">Contacto</h1>
             <p class="formTexto">¿Tenes pensado crear tu propia web? ¡Contactame y te ayudo!</p>
             <div class="flex">
@@ -114,6 +122,7 @@
               </div>
             </div>
           </div>
+         
     <div class="botones">
       <div btn><a href="/#home"><img src="/images/circle.png"></a></div>
       <div btn><a href="/#me"><img src="/images/circle.png"></div>
@@ -122,12 +131,12 @@
     </div>
     <script src="./javascripts/navbar.js"></script>
     <script src="./javascript/ScrollOut.js"></script>
+    <script src="./javascript/itemsMeSection"></script>
     <script>
       ScrollOut({
-        targets: '.me__titulo, .formTitulo, .important__tituloMain, me__titulo--background, .card',
+        targets: '.me__titulo, .formTitulo, .important__tituloMain, me__titulo--background, .card, .me__titlesPresentationText, details',
         threshold: 0.8
     });
     </script>
-      <%- include('includes/footer') %>
   </body>
 </html>

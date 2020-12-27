@@ -1,0 +1,36 @@
+.me{
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+}
+.me__texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.me__texto-p{
+    text-align: center;
+    width: 95%;
+    margin: 0 auto;
+}
+.me__titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.me__items{
+    margin-top:45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    border-style: none;
+    background-color: white;
+}
+button:focus{
+    outline: none;
+}

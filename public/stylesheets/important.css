@@ -163,7 +163,7 @@
 }
 @media (min-width: 1200px) {
   .important {
-    height: 76vh;
+    height: 100vh;
   }
   .columns {
     width: 50%;

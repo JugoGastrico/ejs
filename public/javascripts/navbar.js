@@ -20,3 +20,35 @@ const navSlide = () => {
   });
 };
 navSlide();
+
+
+let x = document.querySelector(".testeo");
+let y = document.querySelector(".testeo2");
+
+x.addEventListener("click", function(){
+  console.log("te")
+  if(y.style.display === "none"){
+    y.style.display = "block"
+  } else {
+    y.style.display = "none"
+  }
+})
+
+function mostrar(){
+  let x = document.getElementById('item')
+ 
+  if (x.style.display === "none"){
+    x.style.display = "block"
+  } else {
+    x.style.display = "none"
+  }
+}
+function mostrar1(){
+  let x = document.getElementById('item1')
+ 
+  if (x.style.display === "none"){
+    x.style.display = "block"
+  } else {
+    x.style.display = "none"
+  }
+}

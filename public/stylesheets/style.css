@@ -44,38 +44,6 @@
   color: #0d0d0d;
 }
 
-/*About Me Styles*/
-.me {
-  height: 73vh;
-  width: 100%;
-  display: flex;
-}
-.comillas {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 0 auto;
-}
-.me__texto {
-  align-items: center;
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-}
-.me__titulo {
-  margin-top: 30px;
-}
-.me__titulo--background {
-  transition: opacity 500ms, transform 500ms;
-}
-.me__texto-p {
-  margin: 20px 7px 0 7px;
-}
-.space {
-  padding: 10px;
-}
-
 /*Proyectos TITULO*/
 
 .parallax {
@@ -164,8 +132,10 @@
 /*Formulario*/
 .formulario {
   height: 100vh;
-  animation-name: opacity;
-  animation-duration: 3s;
+  -webkit-animation-name: opacity;
+          animation-name: opacity;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
   width: 100%;
   background: url("/images/walppaper2.png");
   background-attachment: inherit;
@@ -260,9 +230,7 @@
 }
 
 @media (max-width: 360px) {
-  .me {
-    height: 95vh;
-  }
+ 
   .formulario {
     height: 110vh;
   }
@@ -280,16 +248,7 @@
   .card {
     width: 60%;
   }
-  .me {
-    height: 40vh;
-  }
-  .me__texto-p {
-    margin-top: 40px;
-    width: 80%;
-  }
-  .me__texto-p img {
-    transform: translateX(50%);
-  }
+  
   .proyectos {
     height: 60vh;
   }
@@ -315,42 +274,18 @@
     background-size: cover;
   }
   .homeTitulo {
+    transform: translateY(15vh);
     font-size: 30px;
     line-height: 85px;
     letter-spacing: 5px;
     margin-bottom: 150px;
+    
   }
-
-  .me__texto {
-    flex-direction: row;
+  .homeContact{
+    margin-top: 50px;
   }
-  .me__texto-p {
-    margin: 0 auto;
-    width: 55%;
-  }
-  .me__texto-p img {
-    transform: translateX(150%);
-  }
-  .me__titulo {
-    margin: 0;
-    font-size: 30px;
-    color: #eca54d;
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background-color: #0d0d0d10;
-    transition: opacity 500ms, transform 500ms;
-  }
-  .me__titulo[data-scroll="out"] {
-    opacity: 0;
-    transform: translateX(-100%) scale(0.4);
-  }
-  .me__titulo[data-scroll="in"] {
-    opacity: 1;
-    transform: translateX(0%) scale(1);
-  }
+  
+  
   .parallax {
     margin-top: 50px;
   }
@@ -367,7 +302,6 @@
     opacity: 1;
     transform: translateY(0%) scale(1);
   }
-
   .proyectos {
     padding: 0px;
     display: flex;
@@ -393,9 +327,12 @@
   }
 
   .formBtnContact {
-    animation-name: scalex;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+    -webkit-animation-name: scalex;
+            animation-name: scalex;
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
   }
   .footerStyle {
     margin-top: 110px;
@@ -415,6 +352,17 @@
     margin-right: 15px;
   }
 }
+@-webkit-keyframes scalex {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 @keyframes scalex {
   0% {
     transform: scale(1);
@@ -432,15 +380,7 @@
   }
   .footerStyle {
   }
-  .me__texto-p {
-    width: 40%;
-    margin: auto;
-    padding: 80px 5%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    background: #0d0d0d10;
-  }
+
   .card {
     width: 25%;
     height: 200px;
@@ -448,6 +388,7 @@
   .formulario {
     margin-bottom: -180px;
     margin-top: 90px;
+    height: 100vh;
   }
   .formTitulo {
     margin-bottom: 20px;
@@ -461,15 +402,11 @@
   .formulario {
     height: 95vh;
   }
-  .me {
-    height: 78vh;
-  }
+ 
 }
 @media (min-width: 375px) and (min-height: 700px) {
   .formulario {
     height: 80vh;
   }
-  .me {
-    height: 67vh;
-  }
+
 } ;

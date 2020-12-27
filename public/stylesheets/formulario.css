@@ -1,6 +1,6 @@
 .form__titulo {
   text-align: center;
-  padding-top: 90px;
+  padding-top: 70px;
 }
 .formSection {
   height: 80vh;
@@ -40,7 +40,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 50px;
 }
 .formInfoContact p {
   display: flex;
@@ -73,10 +74,18 @@ input[type="company"] {
   padding: 10px 10px;
   height: 40px;
   color: #eca54d;
-  border: 3px solid white;
   outline: none;
   font-size: 15px;
-  background-color: #0d0d0d;
+}
+textarea[type="comment"] {
+  margin: 0 auto;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  height: 300px;
+  padding: 10px;
+  font-size: 15px;
+  color: #eca54d;
 }
 input[type="submit"] {
   font-size: 15px;
@@ -100,17 +109,7 @@ label[class="comment"] {
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 50px;
 }
-textarea[type="comment"] {
-  margin: 0 auto;
-  width: 100%;
-  display: block;
-  box-sizing: border-box;
-  height: 300px;
-  padding: 10px;
-  font-size: 15px;
-  color: #eca54d;
-  background-color: #0d0d0d;
-}
+
 textarea[type="comment"]:hover {
   border: 1px solid #eca54d;
 }
@@ -138,6 +137,7 @@ textarea[type="comment"]:hover {
     margin-bottom: 0;
   }
 }
+
 @media (max-width: 580px) {
   .maps {
     margin-bottom: 0px;
