@@ -1,5 +1,3 @@
-/* Routes are connected to Controllers folder */
-
 var express = require("express");
 var router = express.Router();
 

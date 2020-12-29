@@ -1,4 +1,4 @@
-const validator = require('validator');
+const validator = require('validator'); 
 const { form } = require("../controllers/contactanos");
 
 let Form = function(data) {
@@ -19,6 +19,7 @@ Form.prototype.validate = function(){
     if (this.data.email == "") {
         this.errors.push("Debes ingresar un correo electrònico de contacto.")
     }
+    
 };
 
 Form.prototype.register = function(){

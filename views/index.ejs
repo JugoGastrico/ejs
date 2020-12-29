@@ -1,52 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-  <body class="scrollbar">
-    <%- include('includes/header') %>
-    <div class="home" id="home">
-      <div class="homeTitulo">
-        <h1>Alexander Tisko</h1>
-        <h1>Diseño Web</h1>
-      </div>
-      <div class="homeContact">
-        <p>Contactame y charlamos tus ideas.</p>
-        <p class="btnContact"><a href="#contact">Contacto</a></p>
-      </div>  
+<head>
+  <meta charset="UTF-8" />
+  <meta description = "Diseñador y creador de webs.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>Alexander Tisko - Diseño web</title>
+</head>
+
+<body class="scrollbar">
+  <%- include('includes/header') %>
+  <div class="home" id="home">
+    <div class="homeTitulo">
+      <h1>Alexander Tisko</h1>
+      <h1>Diseño Web</h1>
     </div>
-    <div class="me" id="me">
-      <div class="me__texto">
-        <div class="me__titulo">
-          <h1 class="me__titulo--background">Sobre mi</h1>  
-        </div>
-        <div class="me__texto-p">
-          <p>Mi nombre es Alexander Tisko, soy
-            estudiante de Ingeniería Industrial y mi hobbie es la
-            programación. Tengo experiencia en HTML, CSS, JavaScript,
-            frontend y backend. 
-            Vengo de una familia apasionada por el
-            marketing, creo que estas dos combinaciones, progrmación y
-            marketing, se les puede sacar un excelente provecho.
-            Estoy en progreso de crear mi propia empresa, la cual ofreceremos todo tipo de soluciones digitales. Desde diseño y creación de web, a diseño gráfico empresarial y marketing digital.
-          </p> 
-        </div>
-        
-      </div>  
-      <div class="me__items">
-        <button type="button" onclick="mostrar();">Prueba</button>
-      <div id="item" style="display: none;">
-        <p>asdasd</p>
-      </div>
-      <button type="button" onclick="mostrar1();">Prueba2</button>
-      <div id="item1" style="display: none;">
-        <p>asdasdasdasdasdasd</p>
-      </div>
-      </div>
-      
+    <div class="homeContact">
+      <p>Contactame y charlamos tus ideas.</p>
+      <p class="btnContact"><a href="#contact">Contacto</a></p>
     </div>
-    
-    <div class="important">   
-      <h1 class="important__tituloMain">¿Qué es importante?</h1>
-      <p class="ct">(&#127881; Color Time &#127881;)</p>
-      <div class="columns">
+  </div>
+  <div class="me" id="me">
+    <div class="me__texto">
+      <div class="me__titulo">
+        <h1 class="me__titulo--background">Sobre mi</h1>
+      </div>
+      <div class="me__texto-p">
+        <p> ¿Cuantas ideas han nacido luego de un mate, cafe o charlas?
+          Así nace mi proyecto, luego de horas de estudio, mate e investigación. </p>
+        <p>
+          Mi nombre es Alexander Tisko, soy de Buenos Aires, Argentina, tengo 24 años y soy emprendedor de este hermoso
+          proyecto.
+        </p>
+      </div>
+
+    </div>
+    <div class="me__items">
+      <button class="animation" type="button" onclick="mostrar();">Programador (+)</button>
+      <div class="me__items-texto" id="item" style="display: none;">
+        <p>Experiencia en HTML, CSS, JavaScript, Node.js, GitHub, MySQL, MongoDB.</p>
+      </div>
+      <button class="animation" type="button" onclick="mostrar1();">Freelancer (+)</button>
+      <div class="me__items-texto" id="item1" style="display: none;">
+        <p>Actualmente me encuentro trabajando como freelancer. Estoy con un proyecto de conformar mi propia empresa de
+          diseño y programación web, posicionamiento SEO de las mismas en Google y diseño gráfico empresarial.</p>
+      </div>
+      <button class="animation" type="button" onclick="mostrar2();">SEO (+)</button>
+      <div class="me__items-texto" id="item2" style="display: none;">
+        <p>En la programación de tu web, es importante que la misma cuente con el correcto SEO realizado. Los robots de
+          Google tienen que poder leerla correctamente para posicionarla de manera adecuada en las búsquedas. </p>
+      </div>
+      <button class="animation" type="button" onclick="mostrar3();">Diseño gráfico (+)</button>
+      <div class="me__items-texto" id="item3" style="display: none;">
+        <p>Tu web debe contar con el diseño gráfico correcto. Es por esto, que trabajo de la mano con Maria Eugenia,
+          "Mimi", diseñador gráfica. Quien realizará el proyectyo según tu prefencia para volcarlo al diseño.</p>
+      </div>
+      <button class="animation" type="button" onclick="mostrar4();">Estudiante de Ing. Industrial (+)</button>
+      <div class="me__items-texto" id="item4" style="display: none;">
+        <p>50% de la carrera terminada.</p>
+      </div>
+    </div>
+    <div class="me__items2">
+      <div class="free animation">
+        <h1>Freelancer</h1>
+        <p>Actualmente me encuentro trabajando como freelancer. Estoy con un proyecto de conformar mi propia empresa de
+          diseño y programación web, posicionamiento SEO de las mismas en Google y diseño gráfico empresarial.</p>
+      </div>
+      <div class="progr animation2">
+        <p>Experiencia en HTML, CSS, JavaScript, Node.js, GitHub, MySQL, MongoDB.</p>
+        <h1>Programador</h1>
+      </div>
+      <div class="student animation">
+        <h1>Estudiante de Ingeniería industrial</h1>
+        <p>50% de la carrera terminada.</p>
+      </div>
+      <div class="dise animation2">
+        <p>Tu web debe contar con el diseño gráfico correcto. Es por esto, que trabajo de la mano con Maria Eugenia,
+          "Mimi", diseñador gráfica. Quien realizará el proyectyo según tu prefencia para volcarlo al diseño.</p>
+        <h1>Diseño gráfico</h1>
+
+      </div>
+      <div class="seo animation2">
+        <h1>SEO</h1>
+        <p>En la programación de tu web, es importante que la misma cuente con el correcto SEO realizado. Los robots de
+          Google tienen que poder leerla correctamente para posicionarla de manera adecuada en las búsquedas. </p>
+      </div>
+      <div class="objective animation2">
+        <p>Para mi es importante que me conozcas, que sepas las tareas que desarrolo y los proyectos en los que trabajo.  </p>
+        <h1>Objetivo</h1>
+      </div>
+    </div>
+  </div>
+  <div class="important">
+    <h1 class="important__tituloMain">¿Qué es importante?</h1>
+    <p class="ct">(&#127881; Color Time &#127881;)</p>
+    <div class="columns">
       <div class="secc1">
         <h1 class="important__titulos">Valores</h1>
         <img class="important__img" src="./images/ethic2.png" style="width: 60px; height: 60px;">
@@ -55,23 +102,25 @@
       <div class="secc2">
         <h1 class="important__titulos">Conocimiento</h1>
         <img class="important__img" src="./images/Idea.png" style="width: 60px; height: 60px;">
-        <p class="important__texto">Que conozcas el desarrollo interno de tu proyecto. Como cliente, debes saber cada acción que se realiza y por qué.</p>
+        <p class="important__texto">Que conozcas el desarrollo interno de tu proyecto. Como cliente, debes saber cada
+          acción que se realiza y por qué.</p>
       </div>
       <div class="secc3">
         <h1 class="important__titulos">Aprendizaje</h1>
         <img class="important__img" src="./images/Study.png" style="width: 60px; height: 60px;">
-        <p class="important__texto">Como desarrolador estoy enfocado a cada día aprender nuevas técnicas y volcarlas en proyectos.</p>
+        <p class="important__texto">Como desarrolador estoy enfocado a cada día aprender nuevas técnicas y volcarlas en
+          proyectos.</p>
       </div>
       <div class="secc4">
         <h1 class="important__titulos">Seguimiento</h1>
         <img class="important__img" src="./images/share.png" style="width: 60px; height: 60px;">
         <p class="important__texto">Seguimiento constante y mejoras de proyectos desarrollados.</p>
       </div>
-      </div>
-      <p class="bw">(&#129402; Black & White again &#129402;)</p>
     </div>
-    <div class="parallax" id="comings">
-      <p>
+    <p class="bw">(&#129402; Black & White again &#129402;)</p>
+  </div>
+  <div class="parallax" id="comings">
+    <p>
       <div class="text">
         <span class="spanproyect">P</span>
         <span class="spanproyect">O</span>
@@ -83,60 +132,59 @@
         <span class="spanproyect">L</span>
         <span class="spanproyect">I</span>
         <span class="spanproyect">O</span>
-        </div></p>
-      </div>      
-      <div class="proyectos" >
-        <div class="card" action="/programacion" method="POST" id="tipsProgrmacion">
-          <h1 class="entry-title">
-            <a href="/programacion" >Tips de programación<br></a>
-          </h1>
-          <p>Consejos, ayudas, etc</p>
-          <small>By <a>Alexander Tisko</a></small>
-          
-          <span class="cardspan"></span>
-          <!--<span class="cardspan">See Also: <a href="https://codepen.io/ariona/pen/JopOOr" target="_blank">3D hove plane effect</a></span>-->
-        </div>
-        <div class="card" action="/ingenieria" method="POST">
-          <h1 class="entry-title">
-            <a href="/ingenieria">Ejercicios de Ingeniería</a>
-          </h1>
-          <p>Ejercicios resueltos</p>
-          <small>Pág. en progreso</small>          
-        </div>  
       </div>
-          <div class="formulario" id="contact">
-            <button onclick="func()">Prueba</button>
-            <div id="try">
-              asdasd
-            </div>
-            <h1 class="formTitulo">Contacto</h1>
-            <p class="formTexto">¿Tenes pensado crear tu propia web? ¡Contactame y te ayudo!</p>
-            <div class="flex">
-              <div class="formContact">
-                <p><img class="formLogos"  src="/images/email.png"> info@alexandertisko.com</p>
-                <p> <img class="formLogos"  src="/images/phone.png"> +5493434808505</p>
-                <p> <img class="formLogos"  src="/images/locationn.png"> Trabajo remoto - Bs As</p>
-              </div>
-              <divc class="formBtnContact" action="/contactanos" method="POST">
-                <a href="/contactanos"><h1>¡Escribeme!</h1></a>
-              </div>
-            </div>
-          </div>
-         
-    <div class="botones">
-      <div btn><a href="/#home"><img src="/images/circle.png"></a></div>
-      <div btn><a href="/#me"><img src="/images/circle.png"></div>
-      <div btn><a href="/#comings"><img src="/images/circle.png"></div>
-      <div btn><a href="/#contact"><img src="/images/circle.png"></div>
+    </p>
+  </div>
+  <div class="proyectos">
+    <div class="card" action="/programacion" method="POST" id="tipsProgrmacion">
+      <h1 class="entry-title">
+        <a href="/programacion">Tips de programación<br></a>
+      </h1>
+      <p>Consejos, ayudas, etc</p>
+      <small>By <a>Alexander Tisko</a></small>
+
+      <span class="cardspan"></span>
+      <!--<span class="cardspan">See Also: <a href="https://codepen.io/ariona/pen/JopOOr" target="_blank">3D hove plane effect</a></span>-->
     </div>
-    <script src="./javascripts/navbar.js"></script>
-    <script src="./javascript/ScrollOut.js"></script>
-    <script src="./javascript/itemsMeSection"></script>
-    <script>
-      ScrollOut({
-        targets: '.me__titulo, .formTitulo, .important__tituloMain, me__titulo--background, .card, .me__titlesPresentationText, details',
-        threshold: 0.8
+    <div class="card" action="/ingenieria" method="POST">
+      <h1 class="entry-title">
+        <a href="/ingenieria">Ejercicios de Ingeniería</a>
+      </h1>
+      <p>Ejercicios resueltos</p>
+      <small>Pág. en progreso</small>
+    </div>
+  </div>
+  <div class="formulario" id="contact">
+    <h1 class="formTitulo">Contacto</h1>
+    <p class="formTexto">¿Tenes pensado crear tu propia web? ¡Contactame y te ayudo!</p>
+    <div class="flex">
+      <div class="formContact">
+        <p><img class="formLogos" src="/images/email.png"> info@alexandertisko.com</p>
+        <p> <img class="formLogos" src="/images/phone.png"> +5493434808505</p>
+        <p> <img class="formLogos" src="/images/locationn.png"> Trabajo remoto - Bs As</p>
+      </div>
+      <div class="formBtnContact" action="/contactanos" method="POST">
+        <a href="/contactanos">
+          <h1>¡Escribeme!</h1>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="botones">
+    <%- include('includes/whatsappSVG') %>
+  </div>
+  
+  
+  <script src="./javascripts/navbar.js"></script>
+  <script src="./javascript/ScrollOut.js"></script>
+  <script src="./javascript/itemsMeSection"></script>
+  <script>
+    ScrollOut({
+      targets: '.me__titulo, .formTitulo, .important__tituloMain, me__titulo--background, .card, .me__titlesPresentationText, .animation, .animation2',
+      threshold: 0.8
     });
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

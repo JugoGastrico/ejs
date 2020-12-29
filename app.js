@@ -11,7 +11,7 @@ var app = express();
 //parse aplication
 app.use(express.urlencoded({extended: false}));
 //JSON
-app.use(express.json())
+app.use(express.json());
 
 
 
