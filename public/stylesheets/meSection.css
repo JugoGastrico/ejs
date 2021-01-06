@@ -95,7 +95,7 @@ button:focus {
 
 @media (min-width: 411px) and (min-height: 731px) {
     .me {
-        height: 64vh;
+        height: 60vh;
     }
 }
 
@@ -136,8 +136,6 @@ button:focus {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        
-
     }
     .me__items2 p {
         display: flex;

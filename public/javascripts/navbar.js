@@ -67,7 +67,7 @@ function mostrar() {
   } else if (width <= 414) {
     if (x.style.display === "none") {
       x.style.display = "block";
-      y.style.height = "74vh";
+      y.style.height = "70vh";
     } else {
       x.style.display = "none";
       y.style.height = "65vh";
